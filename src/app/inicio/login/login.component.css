@@ -1,0 +1,17 @@
+@media only screen and (min-width: 1024px) {
+    #parte{
+        opacity: 0;
+      
+    }
+  }
+
+  @media only screen and (max-width: 1023px) {
+    #parte{
+        opacity: 1;
+        top: -16px;
+        position: relative;
+        height: 36px;
+      
+    }
+  }
+

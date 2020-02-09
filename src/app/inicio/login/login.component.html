@@ -1,0 +1,90 @@
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+    <img src="assets/img/ativodigitais.png" (click)="direciona()" id="imagem" style="width: 150px;  position: relative;  " class="navbar-brand" alt="admin@bootstrapmaster.com">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+     
+      <li class="nav-item">
+        
+      </li>
+      
+     
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      
+      
+      
+        <a href="/#/" id="botao2" style="border-radius: 20px; position: relative;  width: 150px;" class="btn btn-outline-secondary" aria-pressed="true">Página inicial</a>
+      
+    </form>
+  </div>
+</nav>
+  </div><br>
+<div class="app-body">
+    <main class="main d-flex align-items-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+            
+            <div class="card-group">
+              <div class="card p-4">
+                <div class="card-body">
+                  <form [formGroup]="registerForm" (ngSubmit)="login()">
+                    <h1>Login</h1>
+                    <p class="text-muted">Entre com sua conta!</p>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-user"></i></span>
+                      </div>
+                      <input type="text" formControlName="email" class="form-control" [(ngModel)]="data.username" name="username" placeholder="Username" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"  >
+                      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Username é obrigatório</div>
+                    </div>
+                    </div>
+                    <div class="input-group mb-4">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-lock"></i></span>
+                      </div>
+                      <input type="password" formControlName="password" class="form-control" [(ngModel)]="data.password" name="password" placeholder="Password" autocomplete="current-password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password é obrigatório</div>
+                        <div *ngIf="f.password.errors.minlength">Password tem que ter pelo menos 8 caracteres</div>
+                    </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-6">
+                        <button  class="btn btn-primary px-4">Login</button>
+                      </div>
+                      <div class="col-6 text-right">
+                        <button type="button" (click)="irregistre()" id="parte"  class="btn btn-primary active mt-3">Registre</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%" >
+                <div class="card-body text-center">
+                  <div>
+                    <h2>Não tem conta?</h2>
+                    <p>Crie uma conta e desfrute em nosso sistema totalmente profissional!.</p>
+                    
+                    <button type="button" (click)="irregistre()"   class="btn btn-primary active mt-3">Registre agora!</button>
+                  </div>
+                </div>
+              </div>
+            </div><br>
+            <div *ngIf="resposta != null" >
+              <div class="alert alert-warning" role="alert">
+                Username ou password errados!
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </main>
+  </div>
